@@ -8,10 +8,17 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+/**
+ * Clase de negocio cliente donde se manda a llamar mètodos a consumr.
+ */
 @Service
 @Slf4j
 @AllArgsConstructor
 public class MarvelBusinessClient implements MarvelServiceClient {
+    /**
+     * Bean para cliente de marvel
+     *
+     */
     private MarvelClient marvelClient;
     /**
      * Metodo para obtener characters
