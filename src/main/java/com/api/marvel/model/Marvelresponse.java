@@ -4,6 +4,16 @@ package com.api.marvel.model;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase recor de respuest del servicio de marvel.
+ * @param code variable de respuesta de marvel.
+ * @param status variable de respuesta de marvel.
+ * @param copyright variable de respuesta de marvel.
+ * @param attributionText variable de respuesta de marvel.
+ * @param attributionHTML variable de respuesta de marvel.
+ * @param etag variable de respuesta de marvel.
+ * @param data variable de respuesta de marvel.
+ */
 public record Marvelresponse(int code,
                              String status,
                              String copyright,
