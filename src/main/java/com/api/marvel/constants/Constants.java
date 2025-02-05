@@ -32,4 +32,6 @@ public class Constants {
      */
     public static final String RQ_MAP = "/characters";
     public static final String RQ_MAP_ID = "/characterById";
+    public static final String GET_BITACORA = "/getBitacora";
+    public static final String CROSS_ORI = "http://localhost:4200";
 }
