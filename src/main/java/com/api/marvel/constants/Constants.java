@@ -30,5 +30,6 @@ public class Constants {
      * Contante con el valor del reques maping de metddo
      *
      */
-    public static final String RQ_MAP = "characters";
+    public static final String RQ_MAP = "/characters";
+    public static final String RQ_MAP_ID = "/characterById";
 }
