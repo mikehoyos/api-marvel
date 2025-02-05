@@ -1,9 +1,8 @@
 package com.api.marvel.business;
 
-import com.api.marvel.model.Marvelresponse;
-import com.api.marvel.service.client.MarvelClient;
+import org.example.service.model.Marvelresponse;
+import org.example.service.service.MarvelClientFeign;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,7 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -21,7 +20,7 @@ class MarvelBusinessClientTest {
     private MarvelBusinessClient marvelBusinessClient;
 
     @Mock
-    private MarvelClient marvelClient;
+    private MarvelClientFeign marvelClient;
 
     private Marvelresponse marvelresponse;
 
