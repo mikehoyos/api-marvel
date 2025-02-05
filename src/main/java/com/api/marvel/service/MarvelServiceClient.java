@@ -1,7 +1,7 @@
 package com.api.marvel.service;
 
-import com.api.marvel.model.MarvelRequest;
-import com.api.marvel.model.Marvelresponse;
+
+import org.example.service.model.Marvelresponse;
 
 public interface MarvelServiceClient {
     /**

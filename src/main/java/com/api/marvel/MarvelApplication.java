@@ -1,12 +1,13 @@
 package com.api.marvel;
 
-import com.api.marvel.constants.Constants;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
-@EnableFeignClients(basePackages = Constants.BASE_PACKAGE)
 @SpringBootApplication
+@EnableFeignClients(basePackages = "org.example.service.service")
+@ComponentScan(basePackages = {"org.example.service.impl", "com.api.marvel"})
 public class MarvelApplication {
 
 	public static void main(String[] args) {

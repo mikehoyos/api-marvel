@@ -1,11 +1,10 @@
 package com.api.marvel.business;
 
-import com.api.marvel.model.MarvelRequest;
-import com.api.marvel.model.Marvelresponse;
+
 import com.api.marvel.service.MarvelServiceClient;
-import com.api.marvel.service.client.MarvelClient;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.example.service.impl.CharacterServiceImpl;
+import org.example.service.model.Marvelresponse;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,13 +12,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
-@AllArgsConstructor
 public class MarvelBusinessClient implements MarvelServiceClient {
     /**
      * Bean para cliente de marvel
      *
      */
-    private MarvelClient marvelClient;
+    private final CharacterServiceImpl characterServiceImpl;
+    public MarvelBusinessClient(CharacterServiceImpl characterServiceImpl){
+        this.characterServiceImpl = characterServiceImpl;
+
+    }
     /**
      * Metodo para obtener characters
      *
@@ -27,8 +29,7 @@ public class MarvelBusinessClient implements MarvelServiceClient {
      */
     @Override
     public Marvelresponse getCharacter() {
-        Marvelresponse marvelresponse = marvelClient.getCharacter("42ca8a580f3b3aecb8dc76908194aadd","aeb3bf6cf21a20ada8ee437822b2c716");
-        return marvelresponse;
+        return characterServiceImpl.getCharacter();
     }
 
     /**
@@ -38,8 +39,7 @@ public class MarvelBusinessClient implements MarvelServiceClient {
      * @return Marvelresponse
      */
     @Override
-    public Marvelresponse getCharacterById(MarvelRequest marvelRequest) {
-        Marvelresponse marvelresponse = marvelClient.getCharacterById(marvelRequest.id(),"42ca8a580f3b3aecb8dc76908194aadd","aeb3bf6cf21a20ada8ee437822b2c716");
-        return marvelresponse;
+    public Marvelresponse getCharacterById(String marvelRequest) {
+        return  characterServiceImpl.getCharacterById(marvelRequest);
     }
 }
