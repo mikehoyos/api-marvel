@@ -15,5 +15,5 @@ public interface MarvelServiceClient {
      * @param marvelRequest para buscar por parametro
      * @return Marvelresponse
      */
-    Marvelresponse getCharacterById(MarvelRequest marvelRequest);
+    Marvelresponse getCharacterById(String marvelRequest);
 }

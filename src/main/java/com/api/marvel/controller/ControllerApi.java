@@ -30,4 +30,10 @@ public class ControllerApi {
         log.info("En controller");
         return new ResponseEntity<>(marvelServiceClient.getCharacter(), HttpStatus.OK);
     }
+
+    @PostMapping(value = Constants.RQ_MAP_ID, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Marvelresponse> getCharacterById(String marvelRequest) {
+        log.info("En controller byId {}",marvelRequest);
+        return null;//new ResponseEntity<>(marvelServiceClient.getCharacterById(marvelRequest), HttpStatus.OK);
+    }
 }
